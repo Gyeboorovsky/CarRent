@@ -1,0 +1,79 @@
+﻿@using System.Globalization
+@using CarRent.Common
+@model IEnumerable<CarRent.DAL.Vehicle>
+
+@{
+    ViewBag.Title = "Explore cars";
+    var f = new NumberFormatInfo {NumberGroupSeparator = " "};
+}
+
+@if (User.IsInRole(RoleType.Employee.ToString()))
+{
+    <h1 style="text-align: center; padding: 30px">Explore all cars</h1>
+}
+else
+{
+    <h1 style="text-align: center; padding: 30px">Rent your dream car here!</h1>
+}
+
+
+@if (Model.Any())
+{
+    foreach(var vehicle in Model.OrderByDescending(x => x.Available))
+    {
+        <div class="card m-3" style="max-width: 100%;">
+          <div class="row no-gutters">
+             @*Image column*@
+            <div class="col-sm-2">
+              <img src="//www.jquery-az.com/html/images/banana.jpg" class="card-img" alt="IMAGE">
+            </div>
+            @*Vehicle brand and numbers*@
+            <div class="col-sm-2" style="max-width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold" >@vehicle.Brand @vehicle.Model</h5>
+                <p class="card-text text-muted">@vehicle.RegistrationNumber</p>
+
+                <h6 class="card-title">VIN number:</h6>
+                <p class="card-text text-muted">@vehicle.VIN</p>
+              </div>
+            </div>
+            @*Bodytype and price column*@
+            <div class="col-sm-3" style="max-width: 22%;">
+              <div class="card-body">
+
+                <h6 class="card-title" style="padding-bottom: 5px">Type: </h6>
+                 <p class="card-text text-muted">@vehicle.BodyType.ToString()</p>
+
+                <h6 class="card-title" style="padding-bottom: 5px">Mileage:</h6>
+                 <p class="card-text text-muted"> @Convert.ToDecimal(vehicle.Mileage).ToString("n", f) KM</p>
+
+              </div>
+            </div>
+            @*Receipt cost column*@
+            <div class="col-sm-3" style="max-width: 25%;">
+              <div class="card-body">
+                <h6 class="card-title">Production year:</h6>
+                 <p class="card-text text-muted">@vehicle.ProductionYear</p>
+
+                <h6 class="card-title">Price per day:</h6>
+                 <p class="card-text text-muted">@vehicle.PricePerDay PLN</p>
+              </div>
+            </div>
+             @*'Rented' button column*@
+                @if (User.IsInRole(RoleType.User.ToString()))
+                {
+                   <div class="col-md-2" style="max-width: 20%;">
+                       <div class="card-body"> 
+                            <br/>
+                            <a asp-controller="Rent" asp-action="AddRentView" asp-route-vehicleid="@vehicle.Id" class="btn btn-primary @(vehicle.Available ? "" : "disabled")" style="width: 100%" >@(vehicle.Available ? "Rent this car!" : "Not available")</a>
+                        </div>
+                   </div>
+                }
+          </div>
+        </div>
+    }
+}
+else
+{
+    <h1 style="text-align: center; padding: 50px"> There are no cars to rent at this moment!</h1>
+}

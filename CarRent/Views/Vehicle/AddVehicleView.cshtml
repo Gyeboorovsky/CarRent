@@ -1,0 +1,57 @@
+@using CarRent.Common
+@model CarRent.DAL.Vehicle
+
+@{
+    ViewBag.Title = "Adding car...";
+    Layout = "_Layout";
+}
+
+<h2 style="text-align: center">Add car to rent!</h2>
+<form method="POST" asp-action="AddVehicleView" class="centeredContainer">
+    <br />
+    <div class="form-group">
+        <label asp-for="Brand">Brand</label>
+        <input asp-for="Brand" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Model">Model</label>
+        <input asp-for="Model" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductionYear">Production year</label>
+        <input asp-for="ProductionYear" class="form-control" type="number" />
+    </div>
+
+    <div class="form-group">
+        <label>Body type</label>
+        @Html.DropDownListFor(m => m.BodyType, 
+            new SelectList(Enum.GetValues(typeof(BodyType))), 
+            "Select body type",  new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RegistrationNumber">Registration number</label>
+        <input asp-for="RegistrationNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="VIN">VIN</label>
+        <input asp-for="VIN" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Mileage">Mileage</label>
+        <input asp-for="Mileage" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PricePerDay">Price per day</label>
+        <input asp-for="PricePerDay" class="form-control" />
+    </div>  
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Add your car" asp-action="PostVehicle"/>
+    </div>
+</form>

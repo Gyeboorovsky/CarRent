@@ -1,0 +1,76 @@
+﻿@using CarRent.Models.Rent
+@using System.Globalization
+@model IEnumerable<RentViewModel>
+
+@{
+    ViewBag.Title = "My rents";
+}
+
+
+<h1 style="text-align: center; padding: 40px"> My rents</h1>
+
+@if (Model.Any())
+{
+    foreach(var rent in Model.OrderBy(x => x.DateOfReturn).ThenBy(x => x.DateOfReceipt))
+    {
+        <div class="card mb-5" style="max-width: 100%;">
+          <div class="row no-gutters">
+             @*Image column*@
+            <div class="col-sm-2">
+              <img src="//www.jquery-az.com/html/images/banana.jpg" class="card-img" alt="IMAGE">
+            </div>
+            @*Car and user data column*@
+            <div class="col-sm-3" style="max-width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold" >@rent.RentedVehicle.Brand @rent.RentedVehicle.Model</h5>
+                <p class="card-text">@rent.RentUser.FirstName @rent.RentUser.SecondName</p>
+                <p class="card-text text-muted">@rent.RentedVehicle.RegistrationNumber</p>
+                <h6 class="card-title">Date of booking:</h6>
+                <p class="card-text">@rent.BookingDateTime.ToString("dd MMMM yyyy", new CultureInfo("en-GB"))</p>
+              </div>
+            </div>
+            @*Rent data column*@
+            <div class="col-sm-3" style="max-width: 18%;">
+              <div class="card-body">
+                <h6 class="card-title">Expected receipt date:</h6>
+                <p class="card-text">@rent.PlannedDateOfReceipt.ToString("dd MMMM yyyy", new CultureInfo("en-GB"))</p>
+                <h6 class="card-title">Rented for:</h6>
+                <p class="card-text">@rent.RentPeriod days</p>
+                <h6 class="card-title">Cost in total:</h6>
+                 <p class="card-text">@rent.Receipt PLN </p>
+              </div>
+            </div>
+            @*Receipt cost column*@
+            <div class="col-sm-5" style="max-width: 18%;">
+              <div class="card-body"> 
+                      @if (@rent.DateOfReceipt != null)
+                        {
+                            <h6 class="card-title">Receipt date:</h6>
+                            <p class="card-text">@rent.DateOfReceipt?.ToString("dd MMMM yyyy", new CultureInfo("en-GB"))</p>
+                        }
+                        else
+                        {
+                            <p class="card-text text-muted">Not received</p>
+                        }
+
+                       @if (@rent.DateOfReturn != null)
+                        {
+                            <h6 class="card-title">Return date:</h6>
+                            <p class="card-text">@rent.DateOfReturn?.ToString("dd MMMM yyyy", new CultureInfo("en-GB"))</p>
+                        }
+                        else
+                        {
+                            <p class="card-text text-muted">Not returned</p>
+                        }
+              </div>
+            </div>
+          </div>
+        </div>
+    }
+}
+else
+{
+    <h1 style="text-align: center; padding: 30px"> You have no rents!</h1>
+}
+
+

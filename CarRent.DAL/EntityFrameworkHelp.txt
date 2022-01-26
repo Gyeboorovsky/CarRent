@@ -1,0 +1,5 @@
+1.
+dotnet ef migrations add InitialMigration --project CarRent.DAL -s CarRent -c ApplicationDbContext
+
+2.
+dotnet ef database update InitialMigration --project CarRent.DAL -s CarRent -c ApplicationDbContext

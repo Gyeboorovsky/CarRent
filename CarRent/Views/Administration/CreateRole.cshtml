@@ -1,0 +1,24 @@
+﻿@using CarRent.Common
+@model CreateRoleViewModel
+
+@{
+    ViewData["Title"] = "Create Role";
+}
+
+<h1>Create new role</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-floating">
+                  @Html.DropDownListFor(m => m.RoleName, 
+                    new SelectList(Enum.GetValues(typeof(RoleType))), 
+                    "Select role type",  new { @class = "form-control" })
+            </div>
+             <hr />
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Add role</button>
+        </form>
+    </div>
+</div>

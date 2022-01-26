@@ -1,0 +1,36 @@
+@model CarRent.DAL.Rent
+
+@{
+    ViewBag.Title = "Rent your Car NOW!";
+    Layout = "_Layout";
+}
+
+@using (Html.BeginForm())
+ {
+     @Html.AntiForgeryToken()
+     @Html.HiddenFor(x => x.VehicleId)
+ }
+
+<h2 style="text-align: center">Complete form to rent car!</h2>
+<form method="POST" asp-action="AddRentView" class="centeredContainer">
+    <br />
+    <div class="form-group">
+        <label asp-for="PlannedDateOfReceipt">Planned date of car receipt</label>
+        @Html.EditorFor(model => model.PlannedDateOfReceipt, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RentPeriod">Rent period</label>
+        <input asp-for="RentPeriod" class="form-control" />
+    </div>
+    
+    <div class="form-group" hidden="hidden">
+            <label asp-for="VehicleId">Vehicle ID</label>
+            <input asp-for="VehicleId" class="form-control" />
+    </div>
+    
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Add your car" asp-action="PostRent"/>
+    </div>
+</form>
