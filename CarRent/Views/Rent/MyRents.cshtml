@@ -36,8 +36,6 @@
                 <p class="card-text">@rent.PlannedDateOfReceipt.ToString("dd MMMM yyyy", new CultureInfo("en-GB"))</p>
                 <h6 class="card-title">Rented for:</h6>
                 <p class="card-text">@rent.RentPeriod days</p>
-                <h6 class="card-title">Cost in total:</h6>
-                 <p class="card-text">@rent.Receipt PLN </p>
               </div>
             </div>
             @*Receipt cost column*@
@@ -61,7 +59,21 @@
                         else
                         {
                             <p class="card-text text-muted">Not returned</p>
+                            if (rent.DateOfReceipt?.AddDays(rent.RentPeriod) > DateTime.Now && rent.DateOfReceipt != null)
+                            {
+                                <p class="card-text" style="color: @(((DateTime)rent.DateOfReceipt?.AddDays(rent.RentPeriod) - DateTime.Now).Days > 5 ? "black" : "red")">@(((DateTime)rent.DateOfReceipt?.AddDays(rent.RentPeriod) - DateTime.Now).Days) days remaining</p>
+                            }
+                            else if (rent.DateOfReceipt?.AddDays(rent.RentPeriod) <= DateTime.Now && rent.DateOfReceipt != null)
+                            {
+                                <p class="card-text" style="color: red">@(( DateTime.Now - (DateTime)rent.DateOfReceipt?.AddDays(rent.RentPeriod)).Days) days delay!</p>
+                            }
                         }
+              </div>
+            </div>
+            <div class="col-sm-3" style="max-width: 18%;">
+              <div class="card-body">
+                 <h6 class="card-title">Calculated cost:</h6>
+                 <p class="card-text">@rent.Receipt PLN </p>
               </div>
             </div>
           </div>

@@ -3,7 +3,6 @@ using CarRent.Common.Enums;
 using CarRent.DAL;
 using CarRent.DAL.DataModel;
 using CarRent.Repository;
-using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,16 +34,26 @@ namespace CarRent.Service
             return await _vehicleRepository.GetById(id);
         }
 
-        public async Task<Vehicle> Update(Vehicle rent)
+        public async Task<Vehicle> Update(Vehicle vehicle)
         {
-            return await _vehicleRepository.Update(rent);
+            return await _vehicleRepository.Update(vehicle);
         }
 
         public async Task<Vehicle> Add(Vehicle vehicle)
         {
+            //Set other initial model fields 
+            vehicle.Image = new byte[] { 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1 };
+            vehicle.Available = true;
+
             await _vehicleRepository.Add(vehicle);
 
             return vehicle;
+        }
+
+        public async Task<Vehicle> UpdateAvailability(Vehicle vehicle, bool availability)
+        {
+            vehicle.Available = availability;
+            return await _vehicleRepository.Update(vehicle);
         }
     }
 }

@@ -2,11 +2,11 @@
 @model CarRent.DAL.Vehicle
 
 @{
-    ViewBag.Title = "Adding car...";
+    ViewBag.Title = "Adding vehicle...";
     Layout = "_Layout";
 }
 
-<h2 style="text-align: center">Add car to rent!</h2>
+<h2 style="text-align: center">Add vehicle to rent!</h2>
 <form method="POST" asp-action="AddVehicleView" class="centeredContainer">
     <br />
     <div class="form-group">
@@ -52,6 +52,6 @@
     </div>  
     <br />
     <div class="form-group">
-        <input type="submit" value="Add your car" asp-action="PostVehicle"/>
+        <input type="submit" value="Add vehicle" asp-action="PostVehicle"/>
     </div>
 </form>

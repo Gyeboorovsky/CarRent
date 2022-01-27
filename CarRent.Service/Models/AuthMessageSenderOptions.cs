@@ -1,6 +1,8 @@
-namespace CarRent.Service.Models;
-
-public class AuthMessageSenderOptions
+namespace CarRent.Service.Models
 {
-    public string SendGridKey { get; set; }
+
+    public class AuthMessageSenderOptions
+    {
+        public string SendGridKey { get; set; }
+    }
 }

@@ -1,4 +1,5 @@
-﻿using CarRent.DAL;
+﻿using System.Threading.Tasks;
+using CarRent.DAL;
 using CarRent.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -9,12 +10,10 @@ namespace CarRent.Controllers
     [Authorize]
     public class VehicleController : Controller
     {
-        private readonly ILogger<VehicleController> _logger;
         private readonly IVehicleService _vehicleService;
 
-        public VehicleController(ILogger<VehicleController> logger, IVehicleService vehicleService)
+        public VehicleController(IVehicleService vehicleService)
         {
-            _logger = logger;
             _vehicleService = vehicleService;
         }
 
@@ -37,10 +36,6 @@ namespace CarRent.Controllers
         [Authorize(Roles = "Employee")]
         public async Task<IActionResult> PostVehicle(Vehicle vehicle)
         {
-            //Set other initial model fields 
-            vehicle.Image = new byte[] {0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1};
-            vehicle.Available = true;
-
             await _vehicleService.Add(vehicle);
             return RedirectToAction("Index");
         }

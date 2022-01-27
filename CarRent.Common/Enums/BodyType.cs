@@ -1,13 +1,15 @@
-namespace CarRent.Common;
-
-public enum BodyType
+namespace CarRent.Common
 {
-    Coupe,
-    Sedan,
-    Combi,
-    Van,
-    Hatchback,
-    Cabrio,
-    SUV,
-    Compact
+
+    public enum BodyType
+    {
+        Coupe,
+        Sedan,
+        Combi,
+        Van,
+        Hatchback,
+        Cabrio,
+        SUV,
+        Compact
+    }
 }

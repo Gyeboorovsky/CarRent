@@ -8,37 +8,37 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using CarRent.Common;
 
-namespace CarRent.Controllers;
-
-[Authorize]
-public class HomeController : Controller
+namespace CarRent.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-    private readonly UserManager<User> _userManager;
 
-    public HomeController(ILogger<HomeController> logger, UserManager<User> userManager)
+    [Authorize]
+    public class HomeController : Controller
     {
-        _logger = logger;
-        _userManager = userManager;
-    }
+        private readonly UserManager<User> _userManager;
 
-    [AllowAnonymous]
-    public IActionResult Index()
-    {
-        var role = User.IsInRole(RoleType.Administrator.ToString());
-        return View();
-    }
+        public HomeController(UserManager<User> userManager)
+        {
+            _userManager = userManager;
+        }
 
-    [AllowAnonymous]
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        [AllowAnonymous]
+        public IActionResult Index()
+        {
+            var role = User.IsInRole(RoleType.Administrator.ToString());
+            return View();
+        }
 
-    [AllowAnonymous]
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
+        [AllowAnonymous]
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
+        }
     }
 }

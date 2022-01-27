@@ -1,8 +1,10 @@
-namespace CarRent.Common;
-
-public enum RoleType
+namespace CarRent.Common
 {
-    Administrator,
-    Employee,
-    User
+
+    public enum RoleType
+    {
+        Administrator,
+        Employee,
+        User
+    }
 }

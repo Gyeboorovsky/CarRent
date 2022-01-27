@@ -1,18 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="EntityFramework" Version="6.4.4" />
-      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.1" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.1">
+      <PackageReference Include="EntityFramework" Version="5.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.13" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
@@ -20,10 +17,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CarRent.Common\CarRent.Common.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Remove="Migrations\ApplicationDbContextModelSnapshot.cs" />
     </ItemGroup>
 
 </Project>

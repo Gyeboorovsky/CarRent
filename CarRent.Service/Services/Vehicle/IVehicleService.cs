@@ -13,5 +13,6 @@ namespace CarRent.Service
         Task<Vehicle> GetById(Guid id);
         Task<Vehicle> Add(Vehicle vehicle);
         Task<Vehicle> Update(Vehicle rent);
+        Task<Vehicle> UpdateAvailability(Vehicle vehicle, bool availability);
     }
 }

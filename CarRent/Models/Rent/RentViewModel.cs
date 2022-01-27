@@ -1,4 +1,6 @@
-﻿using CarRent.DAL;
+﻿
+using System;
+using CarRent.DAL;
 
 namespace CarRent.Models.Rent
 {

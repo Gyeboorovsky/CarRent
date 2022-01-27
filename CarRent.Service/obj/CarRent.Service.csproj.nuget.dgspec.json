@@ -1,0 +1,305 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Service\\CarRent.Service.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Common\\CarRent.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Common\\CarRent.Common.csproj",
+        "projectName": "CarRent.Common",
+        "projectPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Common\\CarRent.Common.csproj",
+        "packagesPath": "C:\\Users\\togi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\togi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "http://dhi-nuget-server.azurewebsites.net/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/dhigroup/DHI-PL/_packaging/DHIPLNuget/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.DAL\\CarRent.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.DAL\\CarRent.DAL.csproj",
+        "projectName": "CarRent.DAL",
+        "projectPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.DAL\\CarRent.DAL.csproj",
+        "packagesPath": "C:\\Users\\togi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\togi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "http://dhi-nuget-server.azurewebsites.net/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/dhigroup/DHI-PL/_packaging/DHIPLNuget/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Common\\CarRent.Common.csproj": {
+                "projectPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Common\\CarRent.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Repository\\CarRent.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Repository\\CarRent.Repository.csproj",
+        "projectName": "CarRent.Repository",
+        "projectPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Repository\\CarRent.Repository.csproj",
+        "packagesPath": "C:\\Users\\togi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\togi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "http://dhi-nuget-server.azurewebsites.net/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/dhigroup/DHI-PL/_packaging/DHIPLNuget/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.DAL\\CarRent.DAL.csproj": {
+                "projectPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.DAL\\CarRent.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "CacheManager.Core": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Service\\CarRent.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Service\\CarRent.Service.csproj",
+        "projectName": "CarRent.Service",
+        "projectPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Service\\CarRent.Service.csproj",
+        "packagesPath": "C:\\Users\\togi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\togi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "http://dhi-nuget-server.azurewebsites.net/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/dhigroup/DHI-PL/_packaging/DHIPLNuget/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.DAL\\CarRent.DAL.csproj": {
+                "projectPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.DAL\\CarRent.DAL.csproj"
+              },
+              "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Repository\\CarRent.Repository.csproj": {
+                "projectPath": "C:\\Users\\togi\\RiderProjects\\CarRentZaliczenie\\CarRent.Repository\\CarRent.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "CacheManager.Core": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.25.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

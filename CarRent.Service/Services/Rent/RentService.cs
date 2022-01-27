@@ -37,10 +37,29 @@ namespace CarRent.Service
             return await _rentRepository.Update(rent);
         }
 
+        public async Task<Rent> SetDateOfReturn(Rent rent, DateTime date)
+        {
+            rent.DateOfReturn = date;
+            return await _rentRepository.Update(rent);
+        }
+
+        public async Task<Rent> SetDateOfReceipt(Rent rent, DateTime date)
+        {
+            rent.DateOfReceipt = date;
+            return await _rentRepository.Update(rent);
+        }
+
         public async Task<Rent> Add(Rent rent)
         {
             await _rentRepository.Add(rent);
             return rent;
         }
+
+        public async Task<List<Rent>> GetByUserId(string userId)
+        {
+            var allRents = await _rentRepository.GetAll();
+            return allRents.Where(x => x.UserId == userId).ToList();
+        }
+
     }
 }

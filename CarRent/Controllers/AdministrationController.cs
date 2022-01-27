@@ -1,4 +1,7 @@
-﻿using CarRent.DAL;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using CarRent.Common;
+using CarRent.DAL;
 using CarRent.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

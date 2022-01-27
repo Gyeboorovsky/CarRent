@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\togi\RiderProjects\CarRentZaliczenie\CarRent\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/Identity" Path="C:\Users\togi\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.13\staticwebassets\V4\" />
+</StaticWebAssets>
